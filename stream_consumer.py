@@ -5,7 +5,6 @@ import re
 import subprocess
 import sys
 import time
-import os
 from collections import namedtuple
 
 from pyspark import SparkContext
@@ -56,7 +55,7 @@ def main():
         sentiments.createOrReplaceTempView('sentiments')
     
     # Transforming using basic spark functions
-    sentiments_fields = ('text', 'polarity', 'subjectivity')
+    sentiments_fields = ('tweet', 'polarity', 'subjectivity')
     sentiments_obj = namedtuple('sentiment', sentiments_fields)
     tweets.map(lambda tweet: (tweet, *analyze_sentiment(tweet))) \
         .map(lambda p: sentiments_obj(p[0], p[1], p[2])) \
