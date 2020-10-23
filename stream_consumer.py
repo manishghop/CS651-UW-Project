@@ -5,6 +5,7 @@ import re
 import subprocess
 import sys
 import time
+import os
 from collections import namedtuple
 
 from pyspark import SparkContext
@@ -49,23 +50,33 @@ def main():
     
     tweets.cache()
     
+    def save_sentiments(rdd):
+        sentiments = rdd.toDF()
+        sentiments.coalesce(1).write.mode('append').format('json').save(r'sentiments')
+        sentiments.createOrReplaceTempView('sentiments')
+    
     # Transforming using basic spark functions
     sentiments_fields = ('text', 'polarity', 'subjectivity')
     sentiments_obj = namedtuple('sentiment', sentiments_fields)
     tweets.map(lambda tweet: (tweet, *analyze_sentiment(tweet))) \
         .map(lambda p: sentiments_obj(p[0], p[1], p[2])) \
         .window(180, 10) \
-        .foreachRDD(lambda rdd: rdd.toDF().createOrReplaceTempView('sentiments'))
+        .foreachRDD(save_sentiments)
     
     tag_fields = ('hashtag', 'count')
     tag_obj = namedtuple('tag', tag_fields)
+    
+    def save_hashtags(rdd):
+        hashtags = rdd.sortBy(lambda x: x[1], ascending=False).toDF()
+        hashtags.coalesce(1).write.mode('append').format('json').save(r'hashtags')
+        hashtags.limit(10).createOrReplaceTempView('hashtags')
+        
     tweets.flatMap(lambda tweet: tweet.split(' ')) \
         .filter(lambda word: word.startswith('#') and word is not '#') \
         .map(lambda hashtag: (hashtag.replace('#', ''), 1)) \
         .reduceByKeyAndWindow(lambda counts, x: counts + x, lambda counts, x: counts - x, 180, 10) \
         .map(lambda p: tag_obj(p[0], p[1])) \
-        .foreachRDD(lambda rdd: rdd.sortBy(lambda x: x[1], ascending=False).toDF()
-                    .limit(10).createOrReplaceTempView('hashtags'))
+        .foreachRDD(save_hashtags)
     
     ssc.start()
     
