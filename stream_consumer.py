@@ -80,8 +80,8 @@ def main():
     ssc.start()
     
     while True:
-        print('Waiting for another 5 Seconds.....')
-        time.sleep(5)
+        print('Waiting for another 10 Seconds.....')
+        time.sleep(10)
         try:
             top_10_tweets = sqlContext.sql('select * from hashtags')
             top_10_df = top_10_tweets.toPandas()
