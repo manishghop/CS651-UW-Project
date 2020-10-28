@@ -39,8 +39,8 @@ def main():
     sc = SparkContext(master='local[2]', appName='TwitterSentAnalysis')
     sc.setLogLevel('ERROR')
     
-    # Creating the streaming context with batch interval of 10 sec
-    ssc = StreamingContext(sparkContext=sc, batchDuration=10)
+    # Creating the streaming context with batch interval of 5 sec
+    ssc = StreamingContext(sparkContext=sc, batchDuration=5)
     ssc.checkpoint('checkpoints')
     
     sqlContext = SparkSession.builder.getOrCreate()
@@ -59,7 +59,7 @@ def main():
     sentiments_obj = namedtuple('sentiment', sentiments_fields)
     tweets.map(lambda tweet: (tweet, *analyze_sentiment(tweet))) \
         .map(lambda p: sentiments_obj(p[0], p[1], p[2])) \
-        .window(30, 10) \
+        .window(60, 15) \
         .foreachRDD(save_sentiments)
     
     tag_fields = ('hashtag', 'count')
@@ -73,15 +73,15 @@ def main():
     tweets.flatMap(lambda tweet: tweet.split(' ')) \
         .filter(lambda word: word.startswith('#') and word is not '#') \
         .map(lambda hashtag: (hashtag.replace('#', ''), 1)) \
-        .reduceByKeyAndWindow(lambda counts, x: counts + x, lambda counts, x: counts - x, 30, 10) \
+        .reduceByKeyAndWindow(lambda counts, x: counts + x, lambda counts, x: counts - x, 60, 15) \
         .map(lambda p: tag_obj(p[0], p[1])) \
         .foreachRDD(save_hashtags)
     
     ssc.start()
     
     while True:
-        print('Waiting for another 10 Seconds.....')
-        time.sleep(10)
+        print('Waiting for another 15 Seconds.....')
+        time.sleep(15)
         try:
             top_10_tweets = sqlContext.sql('select * from hashtags')
             top_10_df = top_10_tweets.toPandas()
@@ -89,9 +89,9 @@ def main():
             print('------------------------------- \n')
             print(top_10_df)
             
-            pos_sentiment = sqlContext.sql('select count(text) from sentiments where polarity = 1')
-            neu_sentiment = sqlContext.sql('select count(text) from sentiments where polarity = 0')
-            neg_sentiment = sqlContext.sql('select count(text) from sentiments where polarity = -1')
+            pos_sentiment = sqlContext.sql('select count(tweet) from sentiments where polarity = 1')
+            neu_sentiment = sqlContext.sql('select count(tweet) from sentiments where polarity = 0')
+            neg_sentiment = sqlContext.sql('select count(tweet) from sentiments where polarity = -1')
             
             pos_df = pos_sentiment.toPandas()
             neu_df = neu_sentiment.toPandas()
