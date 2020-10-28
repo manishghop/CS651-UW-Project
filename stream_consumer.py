@@ -97,16 +97,16 @@ def main():
             neu_df = neu_sentiment.toPandas()
             neg_df = neg_sentiment.toPandas()
             
-            total_sentiment = pos_df['count(text)'].iloc[0] + neg_df['count(text)'].iloc[0] + \
-                              neu_df['count(text)'].iloc[0]
+            total_sentiment = pos_df['count(tweet)'].iloc[0] + neg_df['count(tweet)'].iloc[0] + \
+                              neu_df['count(tweet)'].iloc[0]
             
-            percent_pos = (pos_df['count(text)'].iloc[0] / total_sentiment) * 100
+            percent_pos = (pos_df['count(tweet)'].iloc[0] / total_sentiment) * 100
             print('Percentage of Positive Sentiment = {} %'.format(round(percent_pos, 2)))
             
-            percent_neu = (neu_df['count(text)'].iloc[0] / total_sentiment) * 100
+            percent_neu = (neu_df['count(tweet)'].iloc[0] / total_sentiment) * 100
             print('Percentage of Neutral Sentiment = {} %'.format(round(percent_neu, 2)))
             
-            percent_neg = (neg_df['count(text)'].iloc[0] / total_sentiment) * 100
+            percent_neg = (neg_df['count(tweet)'].iloc[0] / total_sentiment) * 100
             print('Percentage of Negative Sentiment = {} %'.format(round(percent_neg, 2)))
         except AnalysisException:
             print('SQL data is not ready yet...')
