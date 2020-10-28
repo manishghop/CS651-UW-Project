@@ -59,7 +59,7 @@ def main():
     sentiments_obj = namedtuple('sentiment', sentiments_fields)
     tweets.map(lambda tweet: (tweet, *analyze_sentiment(tweet))) \
         .map(lambda p: sentiments_obj(p[0], p[1], p[2])) \
-        .window(180, 10) \
+        .window(30, 10) \
         .foreachRDD(save_sentiments)
     
     tag_fields = ('hashtag', 'count')
@@ -73,7 +73,7 @@ def main():
     tweets.flatMap(lambda tweet: tweet.split(' ')) \
         .filter(lambda word: word.startswith('#') and word is not '#') \
         .map(lambda hashtag: (hashtag.replace('#', ''), 1)) \
-        .reduceByKeyAndWindow(lambda counts, x: counts + x, lambda counts, x: counts - x, 180, 10) \
+        .reduceByKeyAndWindow(lambda counts, x: counts + x, lambda counts, x: counts - x, 30, 10) \
         .map(lambda p: tag_obj(p[0], p[1])) \
         .foreachRDD(save_hashtags)
     
