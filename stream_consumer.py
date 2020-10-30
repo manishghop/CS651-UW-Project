@@ -1,6 +1,7 @@
-# import findspark
+import findspark
 #
 # findspark.init(r'/usr/local/spark-2.4.7-bin-hadoop2.7')
+findspark.init(r'C:\Users\manis\Documents\spark-3.0.1-bin-hadoop2.7')
 import re
 import subprocess
 import sys
@@ -58,7 +59,7 @@ def main():
     sentiments_fields = ('tweet', 'polarity', 'subjectivity')
     sentiments_obj = namedtuple('sentiment', sentiments_fields)
     tweets.map(lambda tweet: (tweet, *analyze_sentiment(tweet))) \
-        .map(lambda p: sentiments_obj(p[0], p[1], p[2])) \
+        .map(lambda p: sentiments_obj(p[0], p[1], p[2])).filter(lambda x:len(x[0])>0).filter(lambda x: not x[0].isdigit()) \
         .window(60, 15) \
         .foreachRDD(save_sentiments)
     

@@ -25,16 +25,20 @@ class TweetsListener(StreamListener):
     
     def on_timeout(self):
         return True
-
+	
 
 def extract_tweet_text(raw_data):
     data = json.loads(raw_data)
+	
     if 'retweeted_status' in data and 'extended_tweet' in data['retweeted_status']:
         return data['retweeted_status']['extended_tweet']['full_text']
     elif 'extended_status' in data:
         return data['extended_status']['full_text']
-    return data['text']
-
+    print(len(data['text']))
+    #if len(data['text']['tweet'])!=0:
+    if data['lang']=="en":
+        return data['text']
+    #print(data['text'])
 
 def main():
     access_token = '1314295814802472960-1Ko0yTYipUKpmHYe9KRmc5Vsm9NDMr'
@@ -64,7 +68,7 @@ def main():
     
     # Establishing the twitter streams
     twitter_stream = Stream(auth, TweetsListener(api, conn), tweet_mode='extended_tweet')
-    twitter_stream.filter(track=['Trump', 'Biden'], is_async=True, languages=['en'])
+    twitter_stream.filter(track=['Trump','Biden','US Elections 2020'], is_async=True, languages=['en'])
 
 
 if __name__ == '__main__':
