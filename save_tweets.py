@@ -5,16 +5,15 @@ import socket
 
 
 class TweetsListener(StreamListener):
-    def __init__(self, api, conn):
+    def __init__(self, api):
         super(StreamListener, self).__init__()
         self.api = api
-        self.socket = conn
     
     def on_data(self, raw_data):
         try:
             tweet = extract_tweet_text(raw_data)
-            print(tweet + '\n')
-            self.socket.send(str(tweet).encode('utf-8'))
+            with open('tweets.txt', 'a') as file:
+                file.write(str(tweet))
         except Exception as e:
             print('Error on_data: %s' % str(e))
         return True
@@ -25,20 +24,16 @@ class TweetsListener(StreamListener):
     
     def on_timeout(self):
         return True
-	
+
 
 def extract_tweet_text(raw_data):
     data = json.loads(raw_data)
-	
     if 'retweeted_status' in data and 'extended_tweet' in data['retweeted_status']:
         return data['retweeted_status']['extended_tweet']['full_text']
     elif 'extended_status' in data:
         return data['extended_status']['full_text']
-    print(len(data['text']))
-    #if len(data['text']['tweet'])!=0:
-    if data['lang']=="en":
-        return data['text']
-    #print(data['text'])
+    return data['text']
+
 
 def main():
     access_token = '1314295814802472960-1Ko0yTYipUKpmHYe9KRmc5Vsm9NDMr'
@@ -46,20 +41,11 @@ def main():
     consumer_key = 'oPBtnqOvoZUSHWrLIA1SLn1Eh'
     consumer_secret = 'CrI5XRUPvRR7fcPWfNLI8JS9DGwmWKw8h6OyjxeO4gF9inZjFw'
     
-    # Initializing the port and host
-    host = '0.0.0.0'
-    port = 3333
-    address = (host, port)
-    
-    # Initializing the socket
-    server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    server_socket.bind(address)
-    server_socket.listen(5)
-    
-    print('Listening for client...')
-    conn, address = server_socket.accept()
-    
-    print('Connected to Client at ' + str(address))
+    track_array = [
+        'Trump',
+        'Biden',
+        'election'
+    ]
     
     # Authenticating
     auth = OAuthHandler(consumer_key, consumer_secret)
@@ -67,8 +53,8 @@ def main():
     api = API(auth)
     
     # Establishing the twitter streams
-    twitter_stream = Stream(auth, TweetsListener(api, conn), tweet_mode='extended_tweet')
-    twitter_stream.filter(track=['Trump','Biden','US Elections 2020'], is_async=True, languages=['en'])
+    twitter_stream = Stream(auth, TweetsListener(api), tweet_mode='extended_tweet')
+    twitter_stream.filter(track=track_array, is_async=True, languages=['en'])
 
 
 if __name__ == '__main__':
