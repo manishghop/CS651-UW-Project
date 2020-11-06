@@ -2,7 +2,7 @@ import json
 from tweepy import OAuthHandler, Stream, API
 from tweepy.streaming import StreamListener
 import socket
-
+tweet_id={}
 
 class TweetsListener(StreamListener):
     def __init__(self, api, conn):
@@ -26,16 +26,22 @@ class TweetsListener(StreamListener):
     def on_timeout(self):
         return True
 	
+def store_user_id(data):
+    #print(tweet_id)
+    if not data['user']['id'] in tweet_id:
+	    tweet_id[data['user']['id']]=0
+    else:
+        tweet_id[data['user']['id']]+=1
 
 def extract_tweet_text(raw_data):
     data = json.loads(raw_data)
-	
+    if data['user']['id'] in tweet_id:
+        return ''
+    store_user_id(data)
     if 'retweeted_status' in data and 'extended_tweet' in data['retweeted_status']:
         return data['retweeted_status']['extended_tweet']['full_text']
     elif 'extended_status' in data:
         return data['extended_status']['full_text']
-    print(len(data['text']))
-    #if len(data['text']['tweet'])!=0:
     if data['lang']=="en":
         return data['text']
     #print(data['text'])

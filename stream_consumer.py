@@ -55,6 +55,9 @@ def main():
         sentiments.coalesce(1).write.mode('append').format('json').save(r'sentiments')
         sentiments.createOrReplaceTempView('sentiments')
     
+    def user_id_group(rdd):
+	    rdd.groupbyKey(lambda x:x['user']['id'])
+		
     # Transforming using basic spark functions
     sentiments_fields = ('tweet', 'polarity', 'subjectivity')
     sentiments_obj = namedtuple('sentiment', sentiments_fields)
@@ -63,6 +66,9 @@ def main():
         .window(60, 15) \
         .foreachRDD(save_sentiments)
     
+    #tweets.foreachRDD(user_id_group)
+    tweets.pprint()
+	
     tag_fields = ('hashtag', 'count')
     tag_obj = namedtuple('tag', tag_fields)
     
