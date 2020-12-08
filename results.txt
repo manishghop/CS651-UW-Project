@@ -1,0 +1,1387 @@
+C:\Users\manis\Documents\cs651-project
+20/12/09 02:59:40 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+DataFrame[polarity: bigint, subjectivity: string, tweet: string]
+root
+ |-- polarity: long (nullable = true)
+ |-- subjectivity: string (nullable = true)
+ |-- tweet: string (nullable = true)
+
++--------+-------------------+--------------------+
+|polarity|       subjectivity|               tweet|
++--------+-------------------+--------------------+
+|       1|0.16296296296296298|Mike Pompeo says ...|
+|       0|                0.0|     @SidneyPowell1 |
+|       0|                0.0|      @RudyGiuliani |
+|       0|                0.0|          @LLinWood |
+|       0|                0.0|         @molmccann |
+|       0|                0.0|          @jbinnall |
+|       1|               0.25|@BernardKerikRT @...|
+|       0|                0.0|before the FIX wa...|
+|       0|                0.0|            [THREAD]|
+|       0|                0.0|       Pennsylvania:|
+|       0|                0.0|           TRUMP 56%|
+|       0|                0.0|         BIDEN   41%|
+|       1|                0.5|more States below...|
+|       0|                0.0|please R…‼️Joe Bi...|
+|       1|0.28174603174603174|https://t.co/8uuR...|
+|       0|                0.0|   Keep fighting!!! |
+|       0|                0.0| #DumpFoxNews #Ne...|
+|       0|                0.0|#MAGA #Trump #KAG...|
+|       0|                0.0|#RedMirage #Voter...|
+|       0|                0.0|#NewsmaxNOTFoxNew...|
++--------+-------------------+--------------------+
+only showing top 20 rows
+
+DataFrame[polarity: bigint, subjectivity: string, tweet: string]
+root
+ |-- polarity: long (nullable = true)
+ |-- subjectivity: string (nullable = true)
+ |-- tweet: string (nullable = true)
+
++--------+-------------------+--------------------+
+|polarity|       subjectivity|               tweet|
++--------+-------------------+--------------------+
+|       1| 0.4544545454545454|Putin announcing ...|
+|      -1|               0.25|&gt;💲650,000 💵 ...|
+|       1|                0.5|That's more than ...|
+|       0|                0.0|📈 Make your trad...|
+|       1| 0.3966269841269841|Trump Cancels Ele...|
+|       1|0.48446969696969705|Released Emails M...|
+|       0|                0.0|    Minutes later...|
+|       1|0.40499999999999997|Brett Favre: “I e...|
+|       0|                0.0|            -Twitter|
+|       0|                0.0|           -Facebook|
+|       0|                0.0|             -Google|
+|       0|              0.625|-The entire mains...|
+|       0|                0.4|-The deep staters...|
+|      -1|                0.9|-The Hollywood ha...|
+|       0|                0.0|-and the cancel c...|
+|       1| 0.5201388888888889|it’ll be the grea...|
+|       0|                0.0|         Roger Stone|
+|       0|                0.0|        Larry Kudlow|
+|       0|                0.0|         Sam Nunberg|
+|       0|                0.0|       Donald Trump |
++--------+-------------------+--------------------+
+only showing top 20 rows
+
+DataFrame[polarity: bigint, subjectivity: string, tweet: string]
+root
+ |-- polarity: long (nullable = true)
+ |-- subjectivity: string (nullable = true)
+ |-- tweet: string (nullable = true)
+
++--------+-------------------+--------------------+
+|polarity|       subjectivity|               tweet|
++--------+-------------------+--------------------+
+|       1|             0.7375|@funder Very grea...|
+|       1| 0.5491071428571428|They both represe...|
+|       0|                0.0|🤔 Not Taken Out ...|
+|       0|                0.0|🤔 No Bullet Like...|
+|      -1|0.44000000000000006|🏆 WE ARE WINNING...|
+|       1| 0.3495535714285714|The networks cut ...|
+|       0|                0.0|Trump doesn’t hav...|
+|       0|                0.0|                    |
+|       1|                1.0|@PostOpinions htt...|
+|      -1|               0.15|https://t.co/Z6eR...|
+|       0|                0.0|       Cobb Co.: 700|
+|       0|                0.0|      Floyd Co.: 444|
+|       0|                0.0| Gwinnett Co.: 4,800|
+|       0|                0.0|  Laurens Co.: 1,797|
+|       0|                0.0|     Taylor Co.: 456|
+|       1|0.47894736842105273|Plus up to 8,900 ...|
+|       0|                0.0|President Trump c...|
+|      -1| 0.4682142857142857| https://t.co/cu5...|
+|       0|                0.0|   #USAelection2020 |
+|       1| 0.5900000000000001|👇🏾👇🏾👇🏾 http...|
++--------+-------------------+--------------------+
+only showing top 20 rows
+
+DataFrame[polarity: bigint, subjectivity: string, tweet: string]
+root
+ |-- polarity: long (nullable = true)
+ |-- subjectivity: string (nullable = true)
+ |-- tweet: string (nullable = true)
+
++--------+-------------------+--------------------+
+|polarity|       subjectivity|               tweet|
++--------+-------------------+--------------------+
+|       1|                0.5|Interesting.....@...|
+|       0|                0.0|                  😂|
+|       0|                0.0|Didn't even read ...|
+|      -1| 0.4777777777777778|Black Voters stoo...|
+|      -1|0.41269841269841273|FOR BIDEN” 😂 😂R...|
+|       1| 0.3797619047619048|https://t.co/wqVq...|
+|       0|                1.0|Underperform, and...|
+|       0|              0.125|"Ballots were cou...|
+|      -1|0.43387445887445886|MI GOP Chair reve...|
+|       1|0.44596560846560845|Why are ballots c...|
+|       1|              0.565|https://…RT @itsd...|
+|       0|                0.0| Take some time off.|
+|       0|                0.0|            Refocus.|
+|       1|0.45454545454545453| Knit a new blanket.|
+|      -1|                0.1|In a few months, ...|
+|       1|               0.25|And the battle wi...|
+|       0|                0.0|If there was anyo...|
+|       0|                0.0|She didn't whine ...|
+|       0|                0.0|She picked hersel...|
+|       1| 0.4883928571428571|rallied for fair ...|
++--------+-------------------+--------------------+
+only showing top 20 rows
+
+DataFrame[polarity: bigint, subjectivity: string, tweet: string]
+root
+ |-- polarity: long (nullable = true)
+ |-- subjectivity: string (nullable = true)
+ |-- tweet: string (nullable = true)
+
++--------+-------------------+--------------------+
+|polarity|       subjectivity|               tweet|
++--------+-------------------+--------------------+
+|       1| 0.5517316017316017|Let's be clear. T...|
+|       1|                0.4|I will not forget...|
+|       0|                0.0|DATA FROM THE GRO...|
+|      -1|                0.3|Late rural votes ...|
+|       1|                0.5|ARIZONA is not ev...|
+|       1|0.21041666666666667|FOX NEWS owes Ame...|
+|       0|                0.0|Liberal trolls ar...|
+|       0|                0.0|I need your help ...|
+|       0|                0.0|RT and subscribe ...|
+|       1|                0.4|https://t.co/LGvm...|
+|       0|                0.0|DATA FROM THE GRO...|
+|      -1|                0.3|Late rural votes ...|
+|       1|                0.5|ARIZONA is not ev...|
+|       1| 0.8833333333333333|FOX NEWS owes Ame...|
+|       0|                0.0|https://t.co/8byw...|
+|       0|                0.0|             SCIENCE|
+|       0|                0.0|      Trump: Against|
+|       0|                0.0|          Biden: Pro|
+|       0|                0.0|              COVID:|
+|       0|                0.0|      Biden: Against|
++--------+-------------------+--------------------+
+only showing top 20 rows
+
+DataFrame[polarity: bigint, subjectivity: string, tweet: string]
+root
+ |-- polarity: long (nullable = true)
+ |-- subjectivity: string (nullable = true)
+ |-- tweet: string (nullable = true)
+
++--------+-------------------+--------------------+
+|polarity|       subjectivity|               tweet|
++--------+-------------------+--------------------+
+|       0|                0.0|SAVE OUR COUNTRY ...|
+|       0|                0.0|https://t.co/Sv2I...|
+|       0|                0.0|                    |
+|       0|                0.0|“A vote for Donal...|
+|       0|                0.0|                    |
+|       0|                0.0|       Raise Up PAC:|
+|       0|                0.0|                    |
+|       1|0.40891053391053395|A vote for @realD...|
+|       0|                0.0|                    |
+|       0|                0.0|Retired whi…RT @J...|
+|       0|                0.0|                    |
+|      -1| 0.5958085317460318|I voted for #JoeB...|
+|       0|                0.0|                    |
+|       0|                0.0|Trump is doneRT @...|
+|       0|                0.0|                    |
+|       0|                0.0|LET’S GO !!! http...|
+|       0|                0.0|                    |
+|       1|0.41666666666666663|They should read ...|
+|       0|                0.0|                    |
+|      -1|0.37425925925925935|Retired whi…RT @r...|
++--------+-------------------+--------------------+
+only showing top 20 rows
+
+DataFrame[polarity: bigint, subjectivity: string, tweet: string]
+root
+ |-- polarity: long (nullable = true)
+ |-- subjectivity: string (nullable = true)
+ |-- tweet: string (nullable = true)
+
++--------+-------------------+--------------------+
+|polarity|       subjectivity|               tweet|
++--------+-------------------+--------------------+
+|      -1| 0.6666666666666666|BREAKING: #Anonym...|
+|       0|                0.0|                    |
+|      -1| 0.7671717171717173|https://t.co/pbrQ...|
+|       0|                0.0|                    |
+|       1| 0.5389700577200577|https://t.co/N6FK...|
+|       0|                0.0|                    |
+|       1|0.39999999999999997|https://t.co/TtIS...|
+|       0|                0.0|                    |
+|      -1|0.32303030303030306|The minor’s name ...|
+|       0|                0.0|                    |
+|       1|                0.5|Journalism is dea...|
+|       0|                0.0|                    |
+|      -1| 0.5322424242424242|https://t.co/3ENP...|
+|       0|                0.0|                    |
+|      -1|               0.55|Journalism is dea...|
+|       0|                0.0|                    |
+|       0|                0.0|               G T V|
+|       0|                0.0|                 Dot|
+|       0|                0.0|                Org.|
+|       0|                0.0|                    |
++--------+-------------------+--------------------+
+only showing top 20 rows
+
+DataFrame[polarity: bigint, subjectivity: string, tweet: string]
+root
+ |-- polarity: long (nullable = true)
+ |-- subjectivity: string (nullable = true)
+ |-- tweet: string (nullable = true)
+
++--------+-------------------+--------------------+
+|polarity|       subjectivity|               tweet|
++--------+-------------------+--------------------+
+|       1| 0.4852721088435374|Hell hath no fury...|
+|       0|                0.0|                    |
+|       1|0.48333333333333334|Awww, just kiddin...|
+|       0|                0.0|                    |
+|       1|                0.6|Also, where do yo...|
+|       0|                0.0|                    |
+|      -1| 0.4220779220779221|That's how much d...|
+|       0|                0.0|                    |
+|       0|                0.0|                 ✅✅✅|
+|       0|                0.0|                    |
+|       1| 0.5318181818181819|And to those who ...|
+|       0|                0.0|                    |
+|       1|0.39583333333333337|MAGA 🇺🇸RT @chip...|
+|       1|0.27777777777777773| https://t.co/888...|
+|       0|                0.0|https://t.co/46Vk...|
+|       0|                0.0|                    |
+|      -1|                0.4|Photo 👇 https://...|
+|      -1| 0.6333333333333333|I could see it ha...|
+|       0|                0.2|https://t.co/QfnN...|
+|       0|                0.0|                    |
++--------+-------------------+--------------------+
+only showing top 20 rows
+
+DataFrame[polarity: bigint, subjectivity: string, tweet: string]
+root
+ |-- polarity: long (nullable = true)
+ |-- subjectivity: string (nullable = true)
+ |-- tweet: string (nullable = true)
+
++--------+-------------------+--------------------+
+|polarity|       subjectivity|               tweet|
++--------+-------------------+--------------------+
+|       1|                0.5|Interesting.....@...|
+|       0|                0.0|                  😂|
+|       0|                0.0|Didn't even read ...|
+|      -1| 0.4777777777777778|Black Voters stoo...|
+|      -1|0.41269841269841273|FOR BIDEN” 😂 😂R...|
+|       1| 0.3797619047619048|https://t.co/wqVq...|
+|       0|                1.0|Underperform, and...|
+|       0|              0.125|"Ballots were cou...|
+|      -1|0.43387445887445886|MI GOP Chair reve...|
+|       1|0.44596560846560845|Why are ballots c...|
+|       1|              0.565|https://…RT @itsd...|
+|       0|                0.0| Take some time off.|
+|       0|                0.0|            Refocus.|
+|       1|0.45454545454545453| Knit a new blanket.|
+|      -1|                0.1|In a few months, ...|
+|       1|               0.25|And the battle wi...|
+|       0|                0.0|If there was anyo...|
+|       0|                0.0|She didn't whine ...|
+|       0|                0.0|She picked hersel...|
+|       1| 0.4883928571428571|rallied for fair ...|
++--------+-------------------+--------------------+
+only showing top 20 rows
+
+DataFrame[polarity: bigint, subjectivity: string, tweet: string]
+root
+ |-- polarity: long (nullable = true)
+ |-- subjectivity: string (nullable = true)
+ |-- tweet: string (nullable = true)
+
++--------+-------------------+--------------------+
+|polarity|       subjectivity|               tweet|
++--------+-------------------+--------------------+
+|       0|                0.0|SAVE OUR COUNTRY ...|
+|       0|                0.0|https://t.co/Sv2I...|
+|       0|                0.0|                    |
+|       0|                0.0|“A vote for Donal...|
+|       0|                0.0|                    |
+|       0|                0.0|       Raise Up PAC:|
+|       0|                0.0|                    |
+|       1|0.40891053391053395|A vote for @realD...|
+|       0|                0.0|                    |
+|       0|                0.0|Retired whi…RT @J...|
+|       0|                0.0|                    |
+|      -1| 0.5958085317460318|I voted for #JoeB...|
+|       0|                0.0|                    |
+|       0|                0.0|Trump is doneRT @...|
+|       0|                0.0|                    |
+|       0|                0.0|LET’S GO !!! http...|
+|       0|                0.0|                    |
+|       1|0.41666666666666663|They should read ...|
+|       0|                0.0|                    |
+|      -1|0.37425925925925935|Retired whi…RT @r...|
++--------+-------------------+--------------------+
+only showing top 20 rows
+
+DataFrame[polarity: bigint, subjectivity: string, tweet: string]
+root
+ |-- polarity: long (nullable = true)
+ |-- subjectivity: string (nullable = true)
+ |-- tweet: string (nullable = true)
+
++--------+-------------------+--------------------+
+|polarity|       subjectivity|               tweet|
++--------+-------------------+--------------------+
+|       1|0.27954545454545454|What would be bet...|
+|       0|                0.0|                    |
+|       1|0.37916666666666665|This is ho… https...|
+|      -1|0.41458333333333336| https://t.co/q74...|
+|       0|                0.0|                    |
+|      -1|0.47833333333333333|https://t.co/F3AL...|
+|       0|                0.0|                    |
+|      -1| 0.5217171717171717|Just, like, FYI.H...|
+|       0|                0.0|                    |
+|       0|                0.1|        Big shocker.|
+|       0|                0.0|                    |
+|       1| 0.2833333333333334|And Brett Favre i...|
+|       0|                0.0|                    |
+|       0|                0.3|I wanted to take ...|
+|       0|                0.0|                    |
+|      -1|                1.0|This was really d...|
+|       0|                0.0|                    |
+|       1| 0.8333333333333334|In fact, when Sta...|
+|       0|                0.0|🌐https://t.co/zq...|
+|       0|                0.0|                    |
++--------+-------------------+--------------------+
+only showing top 20 rows
+
+DataFrame[polarity: bigint, subjectivity: string, tweet: string]
+root
+ |-- polarity: long (nullable = true)
+ |-- subjectivity: string (nullable = true)
+ |-- tweet: string (nullable = true)
+
++--------+-------------------+--------------------+
+|polarity|       subjectivity|               tweet|
++--------+-------------------+--------------------+
+|       1|0.27954545454545454|What would be bet...|
+|       0|                0.0|                    |
+|       1|0.37916666666666665|This is ho… https...|
+|      -1|0.41458333333333336| https://t.co/q74...|
+|       0|                0.0|                    |
+|      -1|0.47833333333333333|https://t.co/F3AL...|
+|       0|                0.0|                    |
+|      -1| 0.5217171717171717|Just, like, FYI.H...|
+|       0|                0.0|                    |
+|       0|                0.1|        Big shocker.|
+|       0|                0.0|                    |
+|       1| 0.2833333333333334|And Brett Favre i...|
+|       0|                0.0|                    |
+|       0|                0.3|I wanted to take ...|
+|       0|                0.0|                    |
+|      -1|                1.0|This was really d...|
+|       0|                0.0|                    |
+|       1| 0.8333333333333334|In fact, when Sta...|
+|       0|                0.0|🌐https://t.co/zq...|
+|       0|                0.0|                    |
++--------+-------------------+--------------------+
+only showing top 20 rows
+
+DataFrame[polarity: bigint, subjectivity: string, tweet: string]
+root
+ |-- polarity: long (nullable = true)
+ |-- subjectivity: string (nullable = true)
+ |-- tweet: string (nullable = true)
+
++--------+------------------+--------------------+
+|polarity|      subjectivity|               tweet|
++--------+------------------+--------------------+
+|      -1|0.6277777777777778|RT @JoeBiden: Don...|
+|      -1|             0.675|“It is not surpri...|
+|       0|               0.0|Read his letter h...|
+|       0|               0.0|https://t.co/vSP6...|
+|      -1|             0.125|“Hunter called AN...|
+|      -1|              0.55|https…This Sunday...|
+|       0|               0.0|   Get to the polls |
+|       0|               0.0|               #Vote|
+|       0|               0.0|         #DemVoice1 |
+|       0|               0.0|              #ONEV1|
+|       1|             0.225|President Trump s...|
+|       0|               0.0|Downballot electi...|
+|       1|0.3277777777777777|https://t.co/nCT5...|
+|       0|               0.0|We support Presid...|
+|       0|               0.0|              ❤🇺🇲⭐|
+|       0|               0.0|          پوستر جدید|
+|       0|               0.0|   @realDonaldTrump |
+|       0|               0.0|     @restartleader |
+|       0|               0.0|          #Trump2020|
+|       1|0.2833333333333333|#MIGA https://t.c...|
++--------+------------------+--------------------+
+only showing top 20 rows
+
+DataFrame[polarity: bigint, subjectivity: string, tweet: string]
+root
+ |-- polarity: long (nullable = true)
+ |-- subjectivity: string (nullable = true)
+ |-- tweet: string (nullable = true)
+
++--------+------------------+--------------------+
+|polarity|      subjectivity|               tweet|
++--------+------------------+--------------------+
+|       1|0.5666666666666668|RT @wildfl0wermam...|
+|       0|               0.0|#BigTech wouldn’t...|
+|       1|0.3413223140495868|If Trump doesn’t ...|
+|       1|              0.55|     BE RESPONSIBLE.|
+|       1|0.3133333333333333|DON'T AIR WHAT YO...|
+|      -1|0.3321428571428572|2. This is what I...|
+|       0|               0.4|Trump is currentl...|
+|       1|0.4819865319865321|So the media will...|
+|       0|               0.0|"Biden is up by 1...|
+|       0|               0.0|Never, ever trust...|
+|      -1|0.6599999999999999|They have failed ...|
+|       1| 0.570138888888889|The NYT shows onl...|
+|       1|0.3138888888888889|WATCH THE PRESIDE...|
+|       1|               0.7|This is complete ...|
+|       0|               0.0|Turn off @FoxNews...|
+|       0|               0.0|PA :: Trump has 7...|
+|       0|               0.0|NC :: Trump has 7...|
+|       1|               0.9|GA :: Trump has 1...|
+|       1|0.8833333333333333|The electoral col...|
+|       1|           0.40625|It is one of the ...|
++--------+------------------+--------------------+
+only showing top 20 rows
+
+DataFrame[polarity: bigint, subjectivity: string, tweet: string]
+root
+ |-- polarity: long (nullable = true)
+ |-- subjectivity: string (nullable = true)
+ |-- tweet: string (nullable = true)
+
++--------+-------------------+--------------------+
+|polarity|       subjectivity|               tweet|
++--------+-------------------+--------------------+
+|       1| 0.6510416666666667|RT @TPM: Biden Pr...|
+|       1|                0.5|"This is a major ...|
+|      -1|  0.537037037037037|"We want all voti...|
+|      -1|                1.0|They insult and b...|
+|       1|             0.2875|If Biden wins its...|
+|      -1|                0.6|If Trump wins its...|
+|       1|0.36250000000000004|Again, no evidenc...|
+|       1| 0.3333333333333333|https://t.co/zqaB...|
+|       1| 0.4067099567099568|There is a strate...|
+|       0|                0.0|America’s next Pr...|
+|       1|            0.41875|#Election2020… ht...|
+|       1| 0.5636363636363636|https://t.co/g3lX...|
+|       1|             0.3625|“Once President T...|
+|       0|                0.0|1. Six states hav...|
+|       0|                0.4|2. These states h...|
+|       0|                0.0|3. These states A...|
+|       0|                0.0|THIS IS NOT A COI...|
+|      -1| 0.6199999999999999|RTRT @JustZik: Bi...|
+|       1|               0.75|What we need to d...|
+|      -1| 0.5387608225108226|Not spread inform...|
++--------+-------------------+--------------------+
+only showing top 20 rows
+
+DataFrame[polarity: bigint, subjectivity: string, tweet: string]
+root
+ |-- polarity: long (nullable = true)
+ |-- subjectivity: string (nullable = true)
+ |-- tweet: string (nullable = true)
+
++--------+-------------------+--------------------+
+|polarity|       subjectivity|               tweet|
++--------+-------------------+--------------------+
+|       1|0.16296296296296298|Mike Pompeo says ...|
+|       0|                0.0|     @SidneyPowell1 |
+|       0|                0.0|      @RudyGiuliani |
+|       0|                0.0|          @LLinWood |
+|       0|                0.0|         @molmccann |
+|       0|                0.0|          @jbinnall |
+|       1|               0.25|@BernardKerikRT @...|
+|       0|                0.0|before the FIX wa...|
+|       0|                0.0|            [THREAD]|
+|       0|                0.0|       Pennsylvania:|
+|       0|                0.0|           TRUMP 56%|
+|       0|                0.0|         BIDEN   41%|
+|       1|                0.5|more States below...|
+|       0|                0.0|please R…‼️Joe Bi...|
+|       1|0.28174603174603174|https://t.co/8uuR...|
+|       0|                0.0|   Keep fighting!!! |
+|       0|                0.0| #DumpFoxNews #Ne...|
+|       0|                0.0|#MAGA #Trump #KAG...|
+|       0|                0.0|#RedMirage #Voter...|
+|       0|                0.0|#NewsmaxNOTFoxNew...|
++--------+-------------------+--------------------+
+only showing top 20 rows
+
+DataFrame[polarity: bigint, subjectivity: string, tweet: string]
+root
+ |-- polarity: long (nullable = true)
+ |-- subjectivity: string (nullable = true)
+ |-- tweet: string (nullable = true)
+
++--------+-------------------+--------------------+
+|polarity|       subjectivity|               tweet|
++--------+-------------------+--------------------+
+|       1| 0.6510416666666667|RT @TPM: Biden Pr...|
+|       1|                0.5|"This is a major ...|
+|      -1|  0.537037037037037|"We want all voti...|
+|      -1|                1.0|They insult and b...|
+|       1|             0.2875|If Biden wins its...|
+|      -1|                0.6|If Trump wins its...|
+|       1|0.36250000000000004|Again, no evidenc...|
+|       1| 0.3333333333333333|https://t.co/zqaB...|
+|       1| 0.4067099567099568|There is a strate...|
+|       0|                0.0|America’s next Pr...|
+|       1|            0.41875|#Election2020… ht...|
+|       1| 0.5636363636363636|https://t.co/g3lX...|
+|       1|             0.3625|“Once President T...|
+|       0|                0.0|1. Six states hav...|
+|       0|                0.4|2. These states h...|
+|       0|                0.0|3. These states A...|
+|       0|                0.0|THIS IS NOT A COI...|
+|      -1| 0.6199999999999999|RTRT @JustZik: Bi...|
+|       1|               0.75|What we need to d...|
+|      -1| 0.5387608225108226|Not spread inform...|
++--------+-------------------+--------------------+
+only showing top 20 rows
+
+DataFrame[polarity: bigint, subjectivity: string, tweet: string]
+root
+ |-- polarity: long (nullable = true)
+ |-- subjectivity: string (nullable = true)
+ |-- tweet: string (nullable = true)
+
++--------+-------------------+--------------------+
+|polarity|       subjectivity|               tweet|
++--------+-------------------+--------------------+
+|       1|             0.7375|@funder Very grea...|
+|       1| 0.5491071428571428|They both represe...|
+|       0|                0.0|🤔 Not Taken Out ...|
+|       0|                0.0|🤔 No Bullet Like...|
+|      -1|0.44000000000000006|🏆 WE ARE WINNING...|
+|       1| 0.3495535714285714|The networks cut ...|
+|       0|                0.0|Trump doesn’t hav...|
+|       0|                0.0|                    |
+|       1|                1.0|@PostOpinions htt...|
+|      -1|               0.15|https://t.co/Z6eR...|
+|       0|                0.0|       Cobb Co.: 700|
+|       0|                0.0|      Floyd Co.: 444|
+|       0|                0.0| Gwinnett Co.: 4,800|
+|       0|                0.0|  Laurens Co.: 1,797|
+|       0|                0.0|     Taylor Co.: 456|
+|       1|0.47894736842105273|Plus up to 8,900 ...|
+|       0|                0.0|President Trump c...|
+|      -1| 0.4682142857142857| https://t.co/cu5...|
+|       0|                0.0|   #USAelection2020 |
+|       1| 0.5900000000000001|👇🏾👇🏾👇🏾 http...|
++--------+-------------------+--------------------+
+only showing top 20 rows
+
+DataFrame[polarity: bigint, subjectivity: string, tweet: string]
+root
+ |-- polarity: long (nullable = true)
+ |-- subjectivity: string (nullable = true)
+ |-- tweet: string (nullable = true)
+
++--------+-------------------+--------------------+
+|polarity|       subjectivity|               tweet|
++--------+-------------------+--------------------+
+|       0|                0.0|SAVE OUR COUNTRY ...|
+|       0|                0.0|https://t.co/Sv2I...|
+|       0|                0.0|                    |
+|       0|                0.0|“A vote for Donal...|
+|       0|                0.0|                    |
+|       0|                0.0|       Raise Up PAC:|
+|       0|                0.0|                    |
+|       1|0.40891053391053395|A vote for @realD...|
+|       0|                0.0|                    |
+|       0|                0.0|Retired whi…RT @J...|
+|       0|                0.0|                    |
+|      -1| 0.5958085317460318|I voted for #JoeB...|
+|       0|                0.0|                    |
+|       0|                0.0|Trump is doneRT @...|
+|       0|                0.0|                    |
+|       0|                0.0|LET’S GO !!! http...|
+|       0|                0.0|                    |
+|       1|0.41666666666666663|They should read ...|
+|       0|                0.0|                    |
+|      -1|0.37425925925925935|Retired whi…RT @r...|
++--------+-------------------+--------------------+
+only showing top 20 rows
+
+DataFrame[polarity: bigint, subjectivity: string, tweet: string]
+root
+ |-- polarity: long (nullable = true)
+ |-- subjectivity: string (nullable = true)
+ |-- tweet: string (nullable = true)
+
++--------+-------------------+--------------------+
+|polarity|       subjectivity|               tweet|
++--------+-------------------+--------------------+
+|       1| 0.6055555555555556|When all the vote...|
+|       0|                0.0|Trump came on sta...|
+|       0|                0.0|You analyze.Trump...|
+|       0|                0.0|POTUS is closing ...|
+|       1|                0.6|The only way Bide...|
+|       1|                0.5|“You know what so...|
+|       1| 0.6444444444444444| https://t.co/5XN...|
+|       0|                0.0|DATA FROM THE GRO...|
+|      -1|                0.3|Late rural votes ...|
+|       1|                0.5|ARIZONA is not ev...|
+|       1| 0.5713657407407408|FOX NEWS owes Ame...|
+|       0| 0.7999999999999999|That is wrong. Mi...|
+|      -1|               0.25|It’s not OK for y...|
+|      -1|             0.3875|(CNN, Fox News, a...|
+|      -1|                0.7|That's a staggeri...|
+|       0|                0.0|he then corrected...|
+|       1| 0.6500000000000001|Most likely becau...|
+|       1|              0.575|an outrageous, au...|
+|       0|0.06666666666666667|NOTE: Trump has N...|
+|       1|                1.0|“As far as I am c...|
++--------+-------------------+--------------------+
+only showing top 20 rows
+
+DataFrame[polarity: bigint, subjectivity: string, tweet: string]
+root
+ |-- polarity: long (nullable = true)
+ |-- subjectivity: string (nullable = true)
+ |-- tweet: string (nullable = true)
+
++--------+-------------------+--------------------+
+|polarity|       subjectivity|               tweet|
++--------+-------------------+--------------------+
+|       1| 0.4852721088435374|Hell hath no fury...|
+|       0|                0.0|                    |
+|       1|0.48333333333333334|Awww, just kiddin...|
+|       0|                0.0|                    |
+|       1|                0.6|Also, where do yo...|
+|       0|                0.0|                    |
+|      -1| 0.4220779220779221|That's how much d...|
+|       0|                0.0|                    |
+|       0|                0.0|                 ✅✅✅|
+|       0|                0.0|                    |
+|       1| 0.5318181818181819|And to those who ...|
+|       0|                0.0|                    |
+|       1|0.39583333333333337|MAGA 🇺🇸RT @chip...|
+|       1|0.27777777777777773| https://t.co/888...|
+|       0|                0.0|https://t.co/46Vk...|
+|       0|                0.0|                    |
+|      -1|                0.4|Photo 👇 https://...|
+|      -1| 0.6333333333333333|I could see it ha...|
+|       0|                0.2|https://t.co/QfnN...|
+|       0|                0.0|                    |
++--------+-------------------+--------------------+
+only showing top 20 rows
+
+DataFrame[polarity: bigint, subjectivity: string, tweet: string]
+root
+ |-- polarity: long (nullable = true)
+ |-- subjectivity: string (nullable = true)
+ |-- tweet: string (nullable = true)
+
++--------+-------------------+--------------------+
+|polarity|       subjectivity|               tweet|
++--------+-------------------+--------------------+
+|       1|0.16296296296296298|Mike Pompeo says ...|
+|       0|                0.0|     @SidneyPowell1 |
+|       0|                0.0|      @RudyGiuliani |
+|       0|                0.0|          @LLinWood |
+|       0|                0.0|         @molmccann |
+|       0|                0.0|          @jbinnall |
+|       1|               0.25|@BernardKerikRT @...|
+|       0|                0.0|before the FIX wa...|
+|       0|                0.0|            [THREAD]|
+|       0|                0.0|       Pennsylvania:|
+|       0|                0.0|           TRUMP 56%|
+|       0|                0.0|         BIDEN   41%|
+|       1|                0.5|more States below...|
+|       0|                0.0|please R…‼️Joe Bi...|
+|       1|0.28174603174603174|https://t.co/8uuR...|
+|       0|                0.0|   Keep fighting!!! |
+|       0|                0.0| #DumpFoxNews #Ne...|
+|       0|                0.0|#MAGA #Trump #KAG...|
+|       0|                0.0|#RedMirage #Voter...|
+|       0|                0.0|#NewsmaxNOTFoxNew...|
++--------+-------------------+--------------------+
+only showing top 20 rows
+
+DataFrame[polarity: bigint, subjectivity: string, tweet: string]
+root
+ |-- polarity: long (nullable = true)
+ |-- subjectivity: string (nullable = true)
+ |-- tweet: string (nullable = true)
+
++--------+-------------------+--------------------+
+|polarity|       subjectivity|               tweet|
++--------+-------------------+--------------------+
+|       1|0.48787878787878775|Turns out the NYT...|
+|      -1| 0.3515151515151515|https://t.co/xtyN...|
+|       0|                0.0|                    |
+|       0|                0.0|          1/ Hunter:|
+|       0|                0.0|                    |
+|      -1|                0.4|-10 days after fl...|
+|       0|                0.0|                    |
+|      -1|                0.2|-Russian oligarch...|
+|       0|                0.1|https://t.co/68Ft...|
+|       0|                0.0|                    |
+|       1|                1.0|And trump's face ...|
+|       0|                0.0|                    |
+|      -1|                1.0|REALITY: He is li...|
+|       1|                0.3|https://t.co/g2Ue...|
+|       1|                0.2|you can change yo...|
+|       0|                0.0|                    |
+|       0|               0.65|Arkansas - absent...|
+|      -1| 0.7333333333333334|We see you 👁👁RT...|
+|       0|                0.0|                    |
+|      -1|                1.0|The followers are...|
++--------+-------------------+--------------------+
+only showing top 20 rows
+
+DataFrame[polarity: bigint, subjectivity: string, tweet: string]
+root
+ |-- polarity: long (nullable = true)
+ |-- subjectivity: string (nullable = true)
+ |-- tweet: string (nullable = true)
+
++--------+-------------------+--------------------+
+|polarity|       subjectivity|               tweet|
++--------+-------------------+--------------------+
+|       1|0.48787878787878775|Turns out the NYT...|
+|      -1| 0.3515151515151515|https://t.co/xtyN...|
+|       0|                0.0|                    |
+|       0|                0.0|          1/ Hunter:|
+|       0|                0.0|                    |
+|      -1|                0.4|-10 days after fl...|
+|       0|                0.0|                    |
+|      -1|                0.2|-Russian oligarch...|
+|       0|                0.1|https://t.co/68Ft...|
+|       0|                0.0|                    |
+|       1|                1.0|And trump's face ...|
+|       0|                0.0|                    |
+|      -1|                1.0|REALITY: He is li...|
+|       1|                0.3|https://t.co/g2Ue...|
+|       1|                0.2|you can change yo...|
+|       0|                0.0|                    |
+|       0|               0.65|Arkansas - absent...|
+|      -1| 0.7333333333333334|We see you 👁👁RT...|
+|       0|                0.0|                    |
+|      -1|                1.0|The followers are...|
++--------+-------------------+--------------------+
+only showing top 20 rows
+
+DataFrame[polarity: bigint, subjectivity: string, tweet: string]
+root
+ |-- polarity: long (nullable = true)
+ |-- subjectivity: string (nullable = true)
+ |-- tweet: string (nullable = true)
+
++--------+-------------------+--------------------+
+|polarity|       subjectivity|               tweet|
++--------+-------------------+--------------------+
+|       1|                0.4|FYI that Pennsylv...|
+|       0|                0.0|BIDEN HAS WON. BI...|
+|      -1|0.30000000000000004|Imagine the media...|
+|       1|                0.5|FRAUDS!@AlecMacGi...|
+|       0|                0.0|NOTE: Trump has N...|
+|       1| 0.5796296296296296|He also criticize...|
+|       1|                0.5|just google “your...|
+|       0|                0.0|1. When we go to ...|
+|      -1| 0.2888888888888889|2. Early votes ar...|
+|       1|0.10833333333333334|3. Trump will cla...|
+|       0|                0.0|              Philly|
+|       0|                0.0|         Pittsburgh |
+|       0|                0.0|            Detroit |
+|       0|                0.0|           Milwaukee|
+|       0|                0.0|            Atlanta |
+|      -1|0.46851851851851856|It’s transparent....|
+|      -1| 0.6527777777777778|Massive shift in ...|
+|      -1|             0.4125|1. Dems' weak eco...|
+|       0|                0.0|2. @ProjectLincol...|
+|       1|                0.6|3. People dont lo...|
++--------+-------------------+--------------------+
+only showing top 20 rows
+
+DataFrame[polarity: bigint, subjectivity: string, tweet: string]
+root
+ |-- polarity: long (nullable = true)
+ |-- subjectivity: string (nullable = true)
+ |-- tweet: string (nullable = true)
+
++--------+------------------+--------------------+
+|polarity|      subjectivity|               tweet|
++--------+------------------+--------------------+
+|       1|               0.6|What I really lov...|
+|       1|              0.55|So many votes for...|
+|      -1|               0.7|So many votes for...|
+|       1|               0.6|I'll vote for lov...|
+|       0|               0.0|- COVID19: 230k A...|
+|       0|               0.0|         - IMPEACHED|
+|       0|               0.0|- NO WALL (Mexico...|
+|       0|               0.0|- NO HEALTHCARE PLAN|
+|       0|               0.0|       - 25,086 LIES|
+|       1|0.6666666666666666|    - SUPER-SPREADER|
+|       0|               0.0|- NO INFRASTRUCTURE |
+|       1|               0.5|- ALL TOP STAFF: ...|
+|      -1|0.5163194444444444|- TRUMP CRIMES DA...|
+|       1|               0.9|It’s about time t...|
+|      -1|0.4777777777777777| https://t.co/BjN...|
+|      -1|               0.3|Florida: Half of ...|
+|       1|0.4668410293410294|Pennsylvania: Nea...|
+|      -1|0.4222222222222222|'Jobs not mobs' h...|
+|       0|               0.9|They threatened t...|
+|       0|               0.0|In honor of their...|
++--------+------------------+--------------------+
+only showing top 20 rows
+
+DataFrame[polarity: bigint, subjectivity: string, tweet: string]
+root
+ |-- polarity: long (nullable = true)
+ |-- subjectivity: string (nullable = true)
+ |-- tweet: string (nullable = true)
+
++--------+------------------+--------------------+
+|polarity|      subjectivity|               tweet|
++--------+------------------+--------------------+
+|       1|0.5666666666666668|RT @wildfl0wermam...|
+|       0|               0.0|#BigTech wouldn’t...|
+|       1|0.3413223140495868|If Trump doesn’t ...|
+|       1|              0.55|     BE RESPONSIBLE.|
+|       1|0.3133333333333333|DON'T AIR WHAT YO...|
+|      -1|0.3321428571428572|2. This is what I...|
+|       0|               0.4|Trump is currentl...|
+|       1|0.4819865319865321|So the media will...|
+|       0|               0.0|"Biden is up by 1...|
+|       0|               0.0|Never, ever trust...|
+|      -1|0.6599999999999999|They have failed ...|
+|       1| 0.570138888888889|The NYT shows onl...|
+|       1|0.3138888888888889|WATCH THE PRESIDE...|
+|       1|               0.7|This is complete ...|
+|       0|               0.0|Turn off @FoxNews...|
+|       0|               0.0|PA :: Trump has 7...|
+|       0|               0.0|NC :: Trump has 7...|
+|       1|               0.9|GA :: Trump has 1...|
+|       1|0.8833333333333333|The electoral col...|
+|       1|           0.40625|It is one of the ...|
++--------+------------------+--------------------+
+only showing top 20 rows
+
+DataFrame[polarity: bigint, subjectivity: string, tweet: string]
+root
+ |-- polarity: long (nullable = true)
+ |-- subjectivity: string (nullable = true)
+ |-- tweet: string (nullable = true)
+
++--------+-------------------+--------------------+
+|polarity|       subjectivity|               tweet|
++--------+-------------------+--------------------+
+|       1|0.48787878787878775|Turns out the NYT...|
+|      -1| 0.3515151515151515|https://t.co/xtyN...|
+|       0|                0.0|                    |
+|       0|                0.0|          1/ Hunter:|
+|       0|                0.0|                    |
+|      -1|                0.4|-10 days after fl...|
+|       0|                0.0|                    |
+|      -1|                0.2|-Russian oligarch...|
+|       0|                0.1|https://t.co/68Ft...|
+|       0|                0.0|                    |
+|       1|                1.0|And trump's face ...|
+|       0|                0.0|                    |
+|      -1|                1.0|REALITY: He is li...|
+|       1|                0.3|https://t.co/g2Ue...|
+|       1|                0.2|you can change yo...|
+|       0|                0.0|                    |
+|       0|               0.65|Arkansas - absent...|
+|      -1| 0.7333333333333334|We see you 👁👁RT...|
+|       0|                0.0|                    |
+|      -1|                1.0|The followers are...|
++--------+-------------------+--------------------+
+only showing top 20 rows
+
+DataFrame[polarity: bigint, subjectivity: string, tweet: string]
+root
+ |-- polarity: long (nullable = true)
+ |-- subjectivity: string (nullable = true)
+ |-- tweet: string (nullable = true)
+
++--------+-------------------+--------------------+
+|polarity|       subjectivity|               tweet|
++--------+-------------------+--------------------+
+|       1|             0.7375|@funder Very grea...|
+|       1| 0.5491071428571428|They both represe...|
+|       0|                0.0|🤔 Not Taken Out ...|
+|       0|                0.0|🤔 No Bullet Like...|
+|      -1|0.44000000000000006|🏆 WE ARE WINNING...|
+|       1| 0.3495535714285714|The networks cut ...|
+|       0|                0.0|Trump doesn’t hav...|
+|       0|                0.0|                    |
+|       1|                1.0|@PostOpinions htt...|
+|      -1|               0.15|https://t.co/Z6eR...|
+|       0|                0.0|       Cobb Co.: 700|
+|       0|                0.0|      Floyd Co.: 444|
+|       0|                0.0| Gwinnett Co.: 4,800|
+|       0|                0.0|  Laurens Co.: 1,797|
+|       0|                0.0|     Taylor Co.: 456|
+|       1|0.47894736842105273|Plus up to 8,900 ...|
+|       0|                0.0|President Trump c...|
+|      -1| 0.4682142857142857| https://t.co/cu5...|
+|       0|                0.0|   #USAelection2020 |
+|       1| 0.5900000000000001|👇🏾👇🏾👇🏾 http...|
++--------+-------------------+--------------------+
+only showing top 20 rows
+
+DataFrame[polarity: bigint, subjectivity: string, tweet: string]
+root
+ |-- polarity: long (nullable = true)
+ |-- subjectivity: string (nullable = true)
+ |-- tweet: string (nullable = true)
+
++--------+-------------------+--------------------+
+|polarity|       subjectivity|               tweet|
++--------+-------------------+--------------------+
+|       1|0.48787878787878775|Turns out the NYT...|
+|      -1| 0.3515151515151515|https://t.co/xtyN...|
+|       0|                0.0|                    |
+|       0|                0.0|          1/ Hunter:|
+|       0|                0.0|                    |
+|      -1|                0.4|-10 days after fl...|
+|       0|                0.0|                    |
+|      -1|                0.2|-Russian oligarch...|
+|       0|                0.1|https://t.co/68Ft...|
+|       0|                0.0|                    |
+|       1|                1.0|And trump's face ...|
+|       0|                0.0|                    |
+|      -1|                1.0|REALITY: He is li...|
+|       1|                0.3|https://t.co/g2Ue...|
+|       1|                0.2|you can change yo...|
+|       0|                0.0|                    |
+|       0|               0.65|Arkansas - absent...|
+|      -1| 0.7333333333333334|We see you 👁👁RT...|
+|       0|                0.0|                    |
+|      -1|                1.0|The followers are...|
++--------+-------------------+--------------------+
+only showing top 20 rows
+
+DataFrame[polarity: bigint, subjectivity: string, tweet: string]
+root
+ |-- polarity: long (nullable = true)
+ |-- subjectivity: string (nullable = true)
+ |-- tweet: string (nullable = true)
+
++--------+-------------------+--------------------+
+|polarity|       subjectivity|               tweet|
++--------+-------------------+--------------------+
+|       1|                0.2|@realDonaldTrump ...|
+|       1|                0.2|      USA wins 🇺🇸 |
+|       1|                0.2| Netanyahu wins 🇮🇱|
+|       1|                0.2|    Israel wins 🇮🇱|
+|       0|                0.0|Voting for Trump ...|
+|       1|  0.662962962962963|Voting for  Israe...|
+|       0|                0.0|                    |
+|       1| 0.3666666666666667|"We don't have fr...|
+|       0|                0.0|                    |
+|       1|                0.5|➡️ On flip side, ...|
+|       1|0.27777777777777773|https://t.co/a7mg...|
+|      -1| 0.4868686868686869|https://t.co/46Vk...|
+|       0|                0.0|                    |
+|      -1|                1.0|https://t.co/zHXd...|
+|       0|                0.0|                    |
+|      -1| 0.7777777777777777|Like I said, I ha...|
+|      -1|                1.0|FEAR - should get...|
+|       0|                0.0|and Honor &amp; I...|
+|       0|                0.0|             back in|
+|      -1|0.36666666666666664|VOTE @JoeBiden so...|
++--------+-------------------+--------------------+
+only showing top 20 rows
+
+DataFrame[polarity: bigint, subjectivity: string, tweet: string]
+root
+ |-- polarity: long (nullable = true)
+ |-- subjectivity: string (nullable = true)
+ |-- tweet: string (nullable = true)
+
++--------+-------------------+--------------------+
+|polarity|       subjectivity|               tweet|
++--------+-------------------+--------------------+
+|       1| 0.4544545454545454|Putin announcing ...|
+|      -1|               0.25|&gt;💲650,000 💵 ...|
+|       1|                0.5|That's more than ...|
+|       0|                0.0|📈 Make your trad...|
+|       1| 0.3966269841269841|Trump Cancels Ele...|
+|       1|0.48446969696969705|Released Emails M...|
+|       0|                0.0|    Minutes later...|
+|       1|0.40499999999999997|Brett Favre: “I e...|
+|       0|                0.0|            -Twitter|
+|       0|                0.0|           -Facebook|
+|       0|                0.0|             -Google|
+|       0|              0.625|-The entire mains...|
+|       0|                0.4|-The deep staters...|
+|      -1|                0.9|-The Hollywood ha...|
+|       0|                0.0|-and the cancel c...|
+|       1| 0.5201388888888889|it’ll be the grea...|
+|       0|                0.0|         Roger Stone|
+|       0|                0.0|        Larry Kudlow|
+|       0|                0.0|         Sam Nunberg|
+|       0|                0.0|       Donald Trump |
++--------+-------------------+--------------------+
+only showing top 20 rows
+
+DataFrame[polarity: bigint, subjectivity: string, tweet: string]
+root
+ |-- polarity: long (nullable = true)
+ |-- subjectivity: string (nullable = true)
+ |-- tweet: string (nullable = true)
+
++--------+-------------------+--------------------+
+|polarity|       subjectivity|               tweet|
++--------+-------------------+--------------------+
+|      -1|0.37777777777777777|RT @JackPosobiec:...|
+|       1| 0.4035353535353536|and ADOLF  TRUMP ...|
+|       0|                0.0|                    |
+|       1|                0.5|https://t.co/TmfI...|
+|       0|                0.0|                    |
+|      -1|0.43728191000918276|They should read ...|
+|       0|                0.0|                    |
+|       1|0.46569664902998237|The Trump ground ...|
+|       1| 0.5882478632478633|https://t.co/4lil...|
+|       0|                0.0|             Victory|
+|       0|                0.0|      Faith strength|
+|       0|                0.0|We are with you P...|
+|       0|                0.0|  Brazil is with you|
+|       1| 0.5487654320987654|I'm with you“Poll...|
+|       0|                0.0|                    |
+|       0|                0.0|This got the poin...|
+|       1| 0.4319444444444444|All Patriots in t...|
+|      -1| 0.3622222222222222|https://t.co/WEXh...|
+|       0|                0.0|                    |
+|       1|                0.4|He's not just goi...|
++--------+-------------------+--------------------+
+only showing top 20 rows
+
+DataFrame[polarity: bigint, subjectivity: string, tweet: string]
+root
+ |-- polarity: long (nullable = true)
+ |-- subjectivity: string (nullable = true)
+ |-- tweet: string (nullable = true)
+
++--------+-------------------+--------------------+
+|polarity|       subjectivity|               tweet|
++--------+-------------------+--------------------+
+|      -1|0.37777777777777777|RT @JackPosobiec:...|
+|       1| 0.4035353535353536|and ADOLF  TRUMP ...|
+|       0|                0.0|                    |
+|       1|                0.5|https://t.co/TmfI...|
+|       0|                0.0|                    |
+|      -1|0.43728191000918276|They should read ...|
+|       0|                0.0|                    |
+|       1|0.46569664902998237|The Trump ground ...|
+|       1| 0.5882478632478633|https://t.co/4lil...|
+|       0|                0.0|             Victory|
+|       0|                0.0|      Faith strength|
+|       0|                0.0|We are with you P...|
+|       0|                0.0|  Brazil is with you|
+|       1| 0.5487654320987654|I'm with you“Poll...|
+|       0|                0.0|                    |
+|       0|                0.0|This got the poin...|
+|       1| 0.4319444444444444|All Patriots in t...|
+|      -1| 0.3622222222222222|https://t.co/WEXh...|
+|       0|                0.0|                    |
+|       1|                0.4|He's not just goi...|
++--------+-------------------+--------------------+
+only showing top 20 rows
+
+DataFrame[polarity: bigint, subjectivity: string, tweet: string]
+root
+ |-- polarity: long (nullable = true)
+ |-- subjectivity: string (nullable = true)
+ |-- tweet: string (nullable = true)
+
++--------+------------------+--------------------+
+|polarity|      subjectivity|               tweet|
++--------+------------------+--------------------+
+|       1|0.5666666666666668|RT @wildfl0wermam...|
+|       0|               0.0|#BigTech wouldn’t...|
+|       1|0.3413223140495868|If Trump doesn’t ...|
+|       1|              0.55|     BE RESPONSIBLE.|
+|       1|0.3133333333333333|DON'T AIR WHAT YO...|
+|      -1|0.3321428571428572|2. This is what I...|
+|       0|               0.4|Trump is currentl...|
+|       1|0.4819865319865321|So the media will...|
+|       0|               0.0|"Biden is up by 1...|
+|       0|               0.0|Never, ever trust...|
+|      -1|0.6599999999999999|They have failed ...|
+|       1| 0.570138888888889|The NYT shows onl...|
+|       1|0.3138888888888889|WATCH THE PRESIDE...|
+|       1|               0.7|This is complete ...|
+|       0|               0.0|Turn off @FoxNews...|
+|       0|               0.0|PA :: Trump has 7...|
+|       0|               0.0|NC :: Trump has 7...|
+|       1|               0.9|GA :: Trump has 1...|
+|       1|0.8833333333333333|The electoral col...|
+|       1|           0.40625|It is one of the ...|
++--------+------------------+--------------------+
+only showing top 20 rows
+
+DataFrame[polarity: bigint, subjectivity: string, tweet: string]
+root
+ |-- polarity: long (nullable = true)
+ |-- subjectivity: string (nullable = true)
+ |-- tweet: string (nullable = true)
+
++--------+-------------------+--------------------+
+|polarity|       subjectivity|               tweet|
++--------+-------------------+--------------------+
+|      -1|0.43126984126984125|@cher @JoeBiden W...|
+|       0|                0.0|                    |
+|       0|                0.0|They will use Cor...|
+|       0|                0.0|                    |
+|       1| 0.3944444444444445|Get ready for the...|
+|       0|                0.0|                    |
+|       0|                0.0|              -LIVES|
+|       0|                0.0|           -FAMILIES|
+|       0|                0.0|        -LIVELIHOODS|
+|       0|                0.0|               -JOBS|
+|       0|                0.0|         -BUSINESSES|
+|       0|                0.0|            -ECONOMY|
+|       0|                0.0|     -WORLD STANDING|
+|       0|                0.0|            -DECENCY|
+|       0|                0.0|          -INTEGRITY|
+|       0|                0.0|              -HONOR|
+|       0|                0.0|           -MORALITY|
+|       0|                0.0|            -JUSTICE|
+|       0|                0.0|        -ENVIRONMENT|
+|       0|                0.0|      -OUR DEMOCRACY|
++--------+-------------------+--------------------+
+only showing top 20 rows
+
+DataFrame[polarity: bigint, subjectivity: string, tweet: string]
+root
+ |-- polarity: long (nullable = true)
+ |-- subjectivity: string (nullable = true)
+ |-- tweet: string (nullable = true)
+
++--------+------------------+--------------------+
+|polarity|      subjectivity|               tweet|
++--------+------------------+--------------------+
+|      -1|0.6277777777777778|RT @JoeBiden: Don...|
+|      -1|             0.675|“It is not surpri...|
+|       0|               0.0|Read his letter h...|
+|       0|               0.0|https://t.co/vSP6...|
+|      -1|             0.125|“Hunter called AN...|
+|      -1|              0.55|https…This Sunday...|
+|       0|               0.0|   Get to the polls |
+|       0|               0.0|               #Vote|
+|       0|               0.0|         #DemVoice1 |
+|       0|               0.0|              #ONEV1|
+|       1|             0.225|President Trump s...|
+|       0|               0.0|Downballot electi...|
+|       1|0.3277777777777777|https://t.co/nCT5...|
+|       0|               0.0|We support Presid...|
+|       0|               0.0|              ❤🇺🇲⭐|
+|       0|               0.0|          پوستر جدید|
+|       0|               0.0|   @realDonaldTrump |
+|       0|               0.0|     @restartleader |
+|       0|               0.0|          #Trump2020|
+|       1|0.2833333333333333|#MIGA https://t.c...|
++--------+------------------+--------------------+
+only showing top 20 rows
+
+DataFrame[polarity: bigint, subjectivity: string, tweet: string]
+root
+ |-- polarity: long (nullable = true)
+ |-- subjectivity: string (nullable = true)
+ |-- tweet: string (nullable = true)
+
++--------+-------------------+--------------------+
+|polarity|       subjectivity|               tweet|
++--------+-------------------+--------------------+
+|       1|                0.2|@realDonaldTrump ...|
+|       1|                0.2|      USA wins 🇺🇸 |
+|       1|                0.2| Netanyahu wins 🇮🇱|
+|       1|                0.2|    Israel wins 🇮🇱|
+|       0|                0.0|Voting for Trump ...|
+|       1|  0.662962962962963|Voting for  Israe...|
+|       0|                0.0|                    |
+|       1| 0.3666666666666667|"We don't have fr...|
+|       0|                0.0|                    |
+|       1|                0.5|➡️ On flip side, ...|
+|       1|0.27777777777777773|https://t.co/a7mg...|
+|      -1| 0.4868686868686869|https://t.co/46Vk...|
+|       0|                0.0|                    |
+|      -1|                1.0|https://t.co/zHXd...|
+|       0|                0.0|                    |
+|      -1| 0.7777777777777777|Like I said, I ha...|
+|      -1|                1.0|FEAR - should get...|
+|       0|                0.0|and Honor &amp; I...|
+|       0|                0.0|             back in|
+|      -1|0.36666666666666664|VOTE @JoeBiden so...|
++--------+-------------------+--------------------+
+only showing top 20 rows
+
+DataFrame[polarity: bigint, subjectivity: string, tweet: string]
+root
+ |-- polarity: long (nullable = true)
+ |-- subjectivity: string (nullable = true)
+ |-- tweet: string (nullable = true)
+
++--------+-------------------+--------------------+
+|polarity|       subjectivity|               tweet|
++--------+-------------------+--------------------+
+|       1|0.16296296296296298|Mike Pompeo says ...|
+|       0|                0.0|     @SidneyPowell1 |
+|       0|                0.0|      @RudyGiuliani |
+|       0|                0.0|          @LLinWood |
+|       0|                0.0|         @molmccann |
+|       0|                0.0|          @jbinnall |
+|       1|               0.25|@BernardKerikRT @...|
+|       0|                0.0|before the FIX wa...|
+|       0|                0.0|            [THREAD]|
+|       0|                0.0|       Pennsylvania:|
+|       0|                0.0|           TRUMP 56%|
+|       0|                0.0|         BIDEN   41%|
+|       1|                0.5|more States below...|
+|       0|                0.0|please R…‼️Joe Bi...|
+|       1|0.28174603174603174|https://t.co/8uuR...|
+|       0|                0.0|   Keep fighting!!! |
+|       0|                0.0| #DumpFoxNews #Ne...|
+|       0|                0.0|#MAGA #Trump #KAG...|
+|       0|                0.0|#RedMirage #Voter...|
+|       0|                0.0|#NewsmaxNOTFoxNew...|
++--------+-------------------+--------------------+
+only showing top 20 rows
+
+DataFrame[polarity: bigint, subjectivity: string, tweet: string]
+root
+ |-- polarity: long (nullable = true)
+ |-- subjectivity: string (nullable = true)
+ |-- tweet: string (nullable = true)
+
++--------+-------------------+--------------------+
+|polarity|       subjectivity|               tweet|
++--------+-------------------+--------------------+
+|       1|0.45714285714285713|Florida voters pu...|
+|      -1|                0.6|#Trump #Trump2020...|
+|      -1| 0.5857142857142856|That is wrong. Mi...|
+|      -1| 0.5191391941391942|That’s what Trump...|
+|      -1|                0.1|Tearful tributes ...|
+|       1| 0.4232142857142857|#USElection2020 h...|
+|       1|                0.5|"This is a major ...|
+|       1| 0.6256944444444444|"We want all voti...|
+|       1|            0.44375|In order for Bide...|
+|       0|                0.0|             GA: 67%|
+|       0|                0.0|             NC: 61%|
+|       0|                0.0|             PA: 62%|
+|       0|                0.0|             MI: 61%|
+|       0|                0.0|             WI: 71%|
+|       0|                0.0|@realDonaldTrump ...|
+|       1|0.48258928571428567|@DonaldJTrumpJr @...|
+|       1| 0.6222222222222222|and this man is t...|
+|       1|               0.25|He claims a "majo...|
+|       1|                0.5|      Follow live 👇|
+|       1| 0.5025641025641024|https://t.co/dXWA...|
++--------+-------------------+--------------------+
+only showing top 20 rows
+
+DataFrame[polarity: bigint, subjectivity: string, tweet: string]
+root
+ |-- polarity: long (nullable = true)
+ |-- subjectivity: string (nullable = true)
+ |-- tweet: string (nullable = true)
+
++--------+------------------+--------------------+
+|polarity|      subjectivity|               tweet|
++--------+------------------+--------------------+
+|       1|               0.6|What I really lov...|
+|       1|              0.55|So many votes for...|
+|      -1|               0.7|So many votes for...|
+|       1|               0.6|I'll vote for lov...|
+|       0|               0.0|- COVID19: 230k A...|
+|       0|               0.0|         - IMPEACHED|
+|       0|               0.0|- NO WALL (Mexico...|
+|       0|               0.0|- NO HEALTHCARE PLAN|
+|       0|               0.0|       - 25,086 LIES|
+|       1|0.6666666666666666|    - SUPER-SPREADER|
+|       0|               0.0|- NO INFRASTRUCTURE |
+|       1|               0.5|- ALL TOP STAFF: ...|
+|      -1|0.5163194444444444|- TRUMP CRIMES DA...|
+|       1|               0.9|It’s about time t...|
+|      -1|0.4777777777777777| https://t.co/BjN...|
+|      -1|               0.3|Florida: Half of ...|
+|       1|0.4668410293410294|Pennsylvania: Nea...|
+|      -1|0.4222222222222222|'Jobs not mobs' h...|
+|       0|               0.9|They threatened t...|
+|       0|               0.0|In honor of their...|
++--------+------------------+--------------------+
+only showing top 20 rows
+
+DataFrame[polarity: bigint, subjectivity: string, tweet: string]
+root
+ |-- polarity: long (nullable = true)
+ |-- subjectivity: string (nullable = true)
+ |-- tweet: string (nullable = true)
+
++--------+-------------------+--------------------+
+|polarity|       subjectivity|               tweet|
++--------+-------------------+--------------------+
+|      -1| 0.6666666666666666|BREAKING: #Anonym...|
+|       0|                0.0|                    |
+|      -1| 0.7671717171717173|https://t.co/pbrQ...|
+|       0|                0.0|                    |
+|       1| 0.5389700577200577|https://t.co/N6FK...|
+|       0|                0.0|                    |
+|       1|0.39999999999999997|https://t.co/TtIS...|
+|       0|                0.0|                    |
+|      -1|0.32303030303030306|The minor’s name ...|
+|       0|                0.0|                    |
+|       1|                0.5|Journalism is dea...|
+|       0|                0.0|                    |
+|      -1| 0.5322424242424242|https://t.co/3ENP...|
+|       0|                0.0|                    |
+|      -1|               0.55|Journalism is dea...|
+|       0|                0.0|                    |
+|       0|                0.0|               G T V|
+|       0|                0.0|                 Dot|
+|       0|                0.0|                Org.|
+|       0|                0.0|                    |
++--------+-------------------+--------------------+
+only showing top 20 rows
+
+DataFrame[polarity: bigint, subjectivity: string, tweet: string]
+root
+ |-- polarity: long (nullable = true)
+ |-- subjectivity: string (nullable = true)
+ |-- tweet: string (nullable = true)
+
++--------+------------------+--------------------+
+|polarity|      subjectivity|               tweet|
++--------+------------------+--------------------+
+|       1|               0.6|What I really lov...|
+|       1|              0.55|So many votes for...|
+|      -1|               0.7|So many votes for...|
+|       1|               0.6|I'll vote for lov...|
+|       0|               0.0|- COVID19: 230k A...|
+|       0|               0.0|         - IMPEACHED|
+|       0|               0.0|- NO WALL (Mexico...|
+|       0|               0.0|- NO HEALTHCARE PLAN|
+|       0|               0.0|       - 25,086 LIES|
+|       1|0.6666666666666666|    - SUPER-SPREADER|
+|       0|               0.0|- NO INFRASTRUCTURE |
+|       1|               0.5|- ALL TOP STAFF: ...|
+|      -1|0.5163194444444444|- TRUMP CRIMES DA...|
+|       1|               0.9|It’s about time t...|
+|      -1|0.4777777777777777| https://t.co/BjN...|
+|      -1|               0.3|Florida: Half of ...|
+|       1|0.4668410293410294|Pennsylvania: Nea...|
+|      -1|0.4222222222222222|'Jobs not mobs' h...|
+|       0|               0.9|They threatened t...|
+|       0|               0.0|In honor of their...|
++--------+------------------+--------------------+
+only showing top 20 rows
+
+Percentage of Positive Sentiment = 31.86 %
+Percentage of Neutral Sentiment = 51.51 %
+Percentage of Negative Sentiment = 16.63 %
+SUCCESS: The process with PID 3948 (child process of PID 24388) has been terminated.
+SUCCESS: The process with PID 24388 (child process of PID 6428) has been terminated.
+SUCCESS: The process with PID 6428 (child process of PID 17748) has been terminated.
