@@ -21,8 +21,22 @@ print(os.getcwd())
 mypath=os.getcwd()
 onlyfiles = [f for f in listdir(mypath+"\\sentiments") if f!="_SUCCESS" and f!="_temporary"]
 
+
+
+# Function to remove emojis
+def deEmojify(text):
+    regrex_pattern = re.compile(pattern = "["
+        u"\U0001F600-\U0001F64F"  # emoticons
+        u"\U0001F300-\U0001F5FF"  # symbols & pictographs
+        u"\U0001F680-\U0001F6FF"  # transport & map symbols
+        u"\U0001F1E0-\U0001F1FF"  # flags (iOS)
+                           "]+", flags = re.UNICODE)
+    return regrex_pattern.sub(r'',text)
+
+
 # Function to clean tweet
 def clean_tweet(tweet):
+    tweet=deEmojify(tweet)
     return ' '.join(re.sub('(@[A-Za-z0-9]+)|([^0-9A-Za-z \t])|(\w+:\/\/\S+)', ' ', str(tweet)).split())
 
 
@@ -97,13 +111,14 @@ def main():
 	    neg_df = neg_sentiment.toPandas()
 	    pos_df.head()
 	    total_sentiment = pos_df['count(tweet)'].iloc[0] + neg_df['count(tweet)'].iloc[0] + neu_df['count(tweet)'].iloc[0]
+	    #print("Length of file is ",total_sentiment)
 	    
 	    percent_pos = (pos_df['count(tweet)'].iloc[0] / total_sentiment) * 100
 	    
 	    percent_neu = (neu_df['count(tweet)'].iloc[0] / total_sentiment) * 100
 	    
 	    percent_neg = (neg_df['count(tweet)'].iloc[0] / total_sentiment) * 100
-	    return percent_pos,percent_neg,percent_neu
+	    return percent_pos,percent_neg,percent_neu,total_sentiment
     
     def save_hashtags(rdd):
         hashtags = rdd.sortBy(lambda x: x[1], ascending=False).toDF()
@@ -113,11 +128,22 @@ def main():
     positive=0
     negative=0
     nuetral=0
-    for f in onlyfiles:
-	    posi,nega,nue=sentiment_calculator("./sentiments/"+f)
+	
+    states=["Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota",  "Ohio", "Oklahoma", "Oregon",  "Pennsylvania",  "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont",  "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"]
+    states_result={i:[] for i in states}	
+    indices={0: 'Alabama', 1: 'Alaska', 2: 'Arizona', 3: 'Arkansas', 4: 'California', 5: 'Colorado', 6: 'Connecticut', 7: 'Delaware', 8: 'Florida', 9: 'Georgia', 10: 'Hawaii', 11: 'Idaho', 12: 'Illinois', 13: 'Indiana', 14: 'Iowa', 15: 'Kansas', 16: 'Kentucky', 17: 'Louisiana', 18: 'Maine', 19: 'Maryland', 20: 'Massachusetts', 21: 'Michigan', 22: 'Minnesota', 23: 'Mississippi', 24: 'Missouri', 25: 'Montana', 26: 'Nebraska', 27: 'Nevada', 28: 'New Hampshire', 29: 'New Jersey', 30: 'New Mexico', 31: 'New York', 32: 'North Carolina', 33: 'North Dakota', 34: 'Ohio', 35: 'Oklahoma', 36: 'Oregon', 37: 'Pennsylvania', 38: 'Rhode Island', 39: 'South Carolina', 40: 'South Dakota', 41: 'Tennessee', 42: 'Texas', 43: 'Utah', 44: 'Vermont', 45: 'Virginia', 46: 'Washington', 47: 'West Virginia', 48: 'Wisconsin', 49: 'Wyoming'}
+    for i,f in enumerate(onlyfiles):
+	    posi,nega,nue,total_tweets=sentiment_calculator("./sentiments/"+f)
+	    states_result[indices[i]]=[posi,nega,nue,total_tweets]
 	    positive+=posi
 	    negative+=nega
 	    nuetral+=nue
+	
+    f=open('states.txt','w+')
+    for i in states_result:
+	    f.write(str(i)+str(states_result[i])+"\n")
+    f.close()
+	
     percent_pos=positive/len(onlyfiles)
     percent_neg=negative/len(onlyfiles)
     percent_neu=nuetral/len(onlyfiles)
