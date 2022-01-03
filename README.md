@@ -1,14 +1,18 @@
 # CS651 Project
 
-This project is for the CS651 final project
+This project is for the CS651 final project.
 
 
 
-We were given a task to use bih daa tools along with machin eleaning models to solve a real world problem.
+We were given a task to apply the big data tools that were learnt in the class combined with some machine learning models to solve a real world problem.
 
-We decided to predict the winner of us presidential elections 2020 out of the two contestants. 
+We decided to predict the winner of US presidential elections 2020 out of the two contestants(Trump,Biden). 
 
-As it is a binary classification problem, we used several binary classifiers such as Logistic Regression, Naive Bayes Model
+As it is a binary classification problem, we used several binary classifiers such as Logistic Regression, Naive Bayes Model for prediction.
+
+The data source was the tweets collected in real-time from the twitter. As the data was huge we use a Big Data framework Spark Streaming to fetch the tweets in real time. We assigned a time window of 15 minutes for gathering the tweets.
+
+As the tweets can contain unnecassary things , it should be cleaned and processed before passing it to a model.
 
 
 
