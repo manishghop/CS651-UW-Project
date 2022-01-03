@@ -24,11 +24,11 @@ As it is a binary classification problem, we used several binary classifiers suc
 <li> numpy </li>
 <li> findspark</li>
 <li> re </li>
-  <li> subprocess </li>
-  <li> sys </li>
-  <li> pyspark </li> 
-  <li> tweepy</li>
-  <li> socket </li>
+<li> subprocess </li>
+<li> sys </li>
+<li> pyspark </li> 
+<li> tweepy</li>
+<li> socket </li>
 </ul>
 <p>Go ahead and pip install above packages.</p>
 
@@ -39,8 +39,8 @@ pip install pandas
 pip install numpy
 pip install dbConnect
 pip install sklearn
-pip installpandas
-pip installnumpy 
+pip install pandas
+pip install numpy 
 pip install findspark
 pip install re 
 pip install subprocess 
