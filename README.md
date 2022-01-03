@@ -8,24 +8,27 @@ We were given a task to apply the big data tools that were learnt in the class c
 
 We decided to predict the winner of US presidential elections 2020 out of the two contestants(Trump,Biden). 
 
-As it is a binary classification problem, we used several binary classifiers such as Logistic Regression, Naive Bayes Model for prediction.
-
-The data source was the tweets collected in real-time from the twitter. As the data was huge we use a Big Data framework Spark Streaming to fetch the tweets in real time. We assigned a time window of 15 minutes for gathering the tweets.
-
-As the tweets can contain unnecassary things , it should be cleaned and processed before passing it to a model.
+As it is a binary classification problem, we used several binary classifiers such as Logistic Regression, Naive Bayes Model for prediction. We also applied sentimental analysis and figured out from the tweets who'll win the presidential elections.
 
 
 
-# stock_direction_predictor
+
+# US Presidential Election 2020 Winner
 
 
 ## PACKAGES
 <h1>You need to install following packages first</h1>
-<ul><li> Pyqt5</li>
+<ul>
 <li>sklearn </li>
 <li>pandas </li>
 <li> numpy </li>
-<li> DBConnection</li>
+<li> findspark</li>
+<li> re </li>
+  <li> subprocess </li>
+  <li> sys </li>
+  <li> pyspark </li> 
+  <li> tweepy</li>
+  <li> socket </li>
 </ul>
 <p>Go ahead and pip install above packages.</p>
 
@@ -35,35 +38,54 @@ pip install sklearn
 pip install pandas
 pip install numpy
 pip install dbConnect
+pip install sklearn
+pip installpandas
+pip installnumpy 
+pip install findspark
+pip install re 
+pip install subprocess 
+pip install sys 
+pip install pyspark  
+pip install tweepy
+pip installsocket 
 ```
 
 
 <h2>To run the file simply </h2>
 
-Run 
+Open two terminal if on MAC OS, if on Windows open Command Prompt or in UNIX open Command Prompt/Shell.
+
+In one terminal Run 
 
 ```
-python home.py
+python stream_producer.py
 ```
 
+In the other terminal Run
 
+```
+python stream_consumer.py
+```
 
 ## DATA-GATHERING
 
-We gathered data from the yahoo api which lets us access stock market data from any time-period.
-
+The data source was the tweets and they were collected in real-time from the twitter. As the data was huge we use a Big Data framework Spark Streaming to fetch the tweets in real time. We assigned a time window of 15 minutes for gathering the tweets.
 
 
 
 ## DATA PRE-PROCESSING
-In this step we look for any discrepancies in the dataset. We performed standard scaling to ensure that we normalize the data-set.
-There were no missing values as the yahoo api does it's job exceptionally well.
+
+In this step we look for any discrepancies in the dataset. As the tweets can contain unnecassary things , it should be cleaned and processed before passing it to a model.
+
 
 
 
 
 ## FEATURE-ENGINEERING
-As our problem was focussed on stock market direction prediction. We only chose the direction of stock market(Profit(-1) or Loss(1)) for two consecutive days. Rest all other features were found to be useless.
+
+As our problem dealt with text, we had only a single text feature, we didn't need to remove any other features. The feature engineering we applied was to 
+remove emojis, unwanted text, explain here more.
+
 
 
 ## MODEL SELECTION
@@ -77,7 +99,8 @@ Out of these two, Naive Bayes Model preformed better.
 
 
 ## MODEL DEPLOYMENT
-We used Flask framework to deploy our model as a web application. At the web application's front-end we added a textbox where, it asks the user the current day stock market value of the company choosen by the user and in the back-end it predicts the next day's stock market direction(Profit(1) or Loss(-1)).
+
+As this was a school project, we weren't asked to deploy our model somewhere. If asked, we would've done that using Flask framework.
 
 <!--
 ## This below block is for school's requirememt.
